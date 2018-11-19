@@ -39,7 +39,9 @@ abstract class jamesPDFHelpers extends FPDF {
         $this->writeHTML_FontList = array('times', 'arial', 'courier', 'pepsi', 'sports-world');
     }
 
-
+    /**
+    Will set the image of Business logo
+    */
     public function setDWCImage($width, $height, $x = null, $y = null, $location = null) {
         $images_path = JPATH_BASE . DS . 'images';
         if(!$location) {
@@ -150,6 +152,9 @@ abstract class jamesPDFHelpers extends FPDF {
 
     }
 
+    /**
+    Will wrap word a specified width and also add fill to the cells
+    */
     public function WordWrapStrippedCell($w, $h, $txt, $fill = false, $ln = 0, $maxLines = 999, $ellipses = '...', $border = 0, $align = 'L', $link = '', $setX = null) {
         $text = $this->WordWrap($txt, $w);
         $max = (count($text) < $maxLines) ? count($text) : $maxLines;
@@ -353,6 +358,7 @@ abstract class jamesPDFHelpers extends FPDF {
     
     /**
      * These are variables used to generate the Code128 Barcode
+     * Was pulled and modified from FPDF.org scripts page
      * @since 3.7.3
      */
     private $T128, $ABCset, $Aset, $Bset, $Cset, $SetFrom, $SetTo, $JStart, $JSwap;
@@ -590,6 +596,7 @@ abstract class jamesPDFHelpers extends FPDF {
                 }
         }
         
+	    //This needs some adjustments
         if($printText) {
             $curFontSize = $this->GetFontSize();
             $this->SetFontSize(($w * $h)*15);
