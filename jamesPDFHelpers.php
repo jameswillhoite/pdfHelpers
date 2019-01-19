@@ -1,6 +1,6 @@
 <?php
 
-
+/* ----------------- Joomla ----------------------- */
 defined('_JEXEC') || define('_JEXEC', 1);
 defined('JPATH_BASE') || define( 'JPATH_BASE', realpath(dirname(__FILE__) . "../../../..")); 
 defined('DS') || define( 'DS', DIRECTORY_SEPARATOR );
@@ -11,7 +11,7 @@ require_once ( JPATH_BASE .DS.'includes'.DS.'defines.php' );
 require_once ( JPATH_BASE .DS.'includes'.DS.'framework.php' ); 
     $mainframe = JFactory::getApplication('site'); 
     $mainframe->initialise();
-
+/* ------------------------------------------------- */
 require_once ($model_path . "/master.php");
 require_once( $library_path .  '/fpdf/fpdf.php');
 
